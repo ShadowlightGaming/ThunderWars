@@ -1,0 +1,17 @@
+[19:51:07][Main:addCommands] FINE: Help command added
+[19:51:07][Main:addCommands] INFO: Commands loaded
+[19:51:07][Game:run] FINE: Framerate set to 120
+[19:51:07][Game:run] FINE: Fullscreen set to true
+[19:51:07][Game:run] FINE: Screen Width set to 1920
+[19:51:07][Game:run] FINE: Screen Height set to 1080
+[19:51:07][Game:run] FINE: Antianliasing set to 16
+[19:51:07][Game:run] FINE: VSynce set to true
+[19:51:07][Game:run] FINE: Title set to "Game 3D [WIP]"
+[19:51:07][Game:run] FINE: Icon set
+[19:51:07][Game:run] INFO: Starting game
+[19:51:09][Init:world] FINE: Background color set
+[19:51:09][Init:world] INFO: World initialized
+[19:51:09][Init:entities] INFO: Entities initialized
+[19:51:09][Init:lighting] FINE: Ambient light created
+[19:51:09][Init:lighting] FINE: Directional light created
+[19:51:09][Init:lighting] INFO: Lighting initialized

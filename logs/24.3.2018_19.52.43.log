@@ -1,0 +1,50 @@
+[19:52:11][Main:addCommands] FINE: Help command added
+[19:52:11][Main:addCommands] INFO: Commands loaded
+[19:52:11][Game:run] FINE: Framerate set to 120
+[19:52:11][Game:run] FINE: Fullscreen set to true
+[19:52:11][Game:run] FINE: Screen Width set to 1920
+[19:52:11][Game:run] FINE: Screen Height set to 1080
+[19:52:11][Game:run] FINE: Antianliasing set to 16
+[19:52:11][Game:run] FINE: VSynce set to true
+[19:52:11][Game:run] FINE: Title set to "Game 3D [WIP]"
+[19:52:11][Game:run] FINE: Icon set
+[19:52:11][Game:run] INFO: Starting game
+[19:52:12][Init:world] FINE: Background color set
+[19:52:12][Init:world] INFO: World initialized
+[19:52:12][Init:entities] INFO: Entities initialized
+[19:52:12][Init:lighting] FINE: Ambient light created
+[19:52:12][Init:lighting] FINE: Directional light created
+[19:52:12][Init:lighting] INFO: Lighting initialized
+[19:52:12][Init:keys] CONFIG: Key + 30 set to Left
+[19:52:12][Init:keys] CONFIG: Key + 32 set to Right
+[19:52:12][Init:keys] CONFIG: Key + 17 set to Up
+[19:52:12][Init:keys] CONFIG: Key + 32 set to Down
+[19:52:12][Init:keys] CONFIG: Key + 57 set to Jump
+[19:52:12][Init:keys] INFO: Key listener created
+[19:52:12][Init:keys] INFO: Keys initialized
+[19:52:16][handlers.InputHandler:onAction] FINE: Left pressed
+[19:52:16][handlers.InputHandler:onAction] FINE: Left pressed
+[19:52:16][handlers.InputHandler:onAction] FINE: Left pressed
+[19:52:17][handlers.InputHandler:onAction] FINE: Left pressed
+[19:52:17][handlers.InputHandler:onAnalog] FINE: Right pressed
+[19:52:17][handlers.InputHandler:onAnalog] FINE: Right pressed
+[19:52:17][handlers.InputHandler:onAnalog] FINE: Right pressed
+[19:52:17][handlers.InputHandler:onAnalog] FINE: Right pressed
+[19:52:17][handlers.InputHandler:onAnalog] FINE: Right pressed
+[19:52:17][handlers.InputHandler:onAnalog] FINE: Right pressed
+[19:52:17][handlers.InputHandler:onAnalog] FINE: Right pressed
+[19:52:17][handlers.InputHandler:onAnalog] FINE: Right pressed
+[19:52:17][handlers.InputHandler:onAnalog] FINE: Right pressed
+[19:52:17][handlers.InputHandler:onAnalog] FINE: Right pressed
+[19:52:17][handlers.InputHandler:onAnalog] FINE: Right pressed
+[19:52:17][handlers.InputHandler:onAnalog] FINE: Right pressed
+[19:52:17][handlers.InputHandler:onAnalog] FINE: Right pressed
+[19:52:17][handlers.InputHandler:onAnalog] FINE: Right pressed
+[19:52:17][handlers.InputHandler:onAnalog] FINE: Right pressed
+[19:52:17][handlers.InputHandler:onAnalog] FINE: Right pressed
+[19:52:17][handlers.InputHandler:onAnalog] FINE: Right pressed
+[19:52:17][handlers.InputHandler:onAnalog] FINE: Right pressed
+[19:52:17][handlers.InputHandler:onAnalog] FINE: Right pressed
+[19:52:17][handlers.InputHandler:onAnalog] FINE: Right pressed
+[19:52:18][handlers.InputHandler:onAction] FINE: Left pressed
+[19:52:18][handlers.InputHandler:onAction] FINE: Left pressed

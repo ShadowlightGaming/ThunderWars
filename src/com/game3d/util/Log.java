@@ -36,6 +36,14 @@ public class Log {
 			LOG.setUseParentHandlers(false);
 			LOG.addHandler(fh);
 			LOG.addHandler(ch);
+			
+			/**
+			 * JME Log
+			 **/
+			Logger logger = Logger.getLogger(java.util.logging.Logger.class.getName());
+			logger.setUseParentHandlers(false);
+			logger.addHandler(ch);
+			
 		} catch(IOException e) {
 			LOG.severe("I/O Exception encountered. Full stack trace:\n" + e.toString() + "\n\tat " +
 					Arrays.asList(e.getStackTrace()).stream().map(Objects::toString).collect(Collectors.joining("\n\tat ")));

@@ -2,11 +2,16 @@ package com.game3d;
 
 import java.util.logging.Logger;
 
-import com.bulletphysics.dynamics.RigidBody;
 import com.game3d.util.Config;
 import com.jme3.app.SimpleApplication;
+import com.jme3.asset.plugins.ZipLocator;
 import com.jme3.bullet.BulletAppState;
+import com.jme3.bullet.collision.shapes.CapsuleCollisionShape;
+import com.jme3.bullet.collision.shapes.CollisionShape;
 import com.jme3.bullet.control.CharacterControl;
+import com.jme3.bullet.control.RigidBodyControl;
+import com.jme3.bullet.util.CollisionShapeFactory;
+import com.jme3.math.ColorRGBA;
 import com.jme3.math.Vector3f;
 import com.jme3.scene.Spatial;
 import com.jme3.system.AppSettings;
@@ -40,35 +45,78 @@ public class Game extends SimpleApplication {
 		
 		app.setSettings(settings);
 		app.setShowSettings(false);
-		
-        app.start();
+
+		app.start();
         LOG.info("Starting game");
     }
 
-    private Spatial sceneModel;
-    private BulletAppState bas;
-    private RigidBody landscape;
-    private CharacterControl player;
-    private Vector3f walkDirection = new Vector3f();
-    private boolean left = false, right = false, up = false, down = false;
+    Spatial sceneModel;
+    BulletAppState bas;
+    RigidBodyControl landscape;
+    CharacterControl player;
     
-    private Vector3f camDir = new Vector3f();
-    private Vector3f camLeft = new Vector3f();
+    Vector3f walkDirection = new Vector3f();
+    Vector3f camDir = new Vector3f();
+    Vector3f camLeft = new Vector3f();
     
 	@Override
 	public void simpleInitApp() {
-		viewPort.getName();
-		Init init = new Init();
+		bas = new BulletAppState();
+		stateManager.attach(bas);
 		
-		init.world();
-		init.entities();
-		init.lighting();
-		init.keys();
+		//Set world settings
+		viewPort.setBackgroundColor(new ColorRGBA(0.7f,0.8f,1f,1f));
+		flyCam.setMoveSpeed(20);
 		
+		//Load map
+		app.getAssetManager().registerLocator("assets/models/Room.zip", ZipLocator.class);
+		sceneModel = app.getAssetManager().loadModel("Room.scene");
+		sceneModel.setLocalScale(2f);
+		
+		//Set world collision paramators
+		CollisionShape collisionShape = CollisionShapeFactory.createMeshShape(sceneModel);
+		landscape = new RigidBodyControl(collisionShape, 0);
+		sceneModel.addControl(landscape);
+		
+		//Load Player
+		CapsuleCollisionShape capsuleShape = new CapsuleCollisionShape(1.5f, 6f, 1);
+		player = new CharacterControl(capsuleShape, 0.05f);
+		player.setJumpSpeed(20);
+		player.setFallSpeed(30);
+		player.setGravity(30f);
+		player.setPhysicsLocation(new Vector3f(0, 10, 0));
+		player.setEnabled(true);
+		
+		//Add map
+		rootNode.attachChild(sceneModel);
+		bas.getPhysicsSpace().add(landscape);
+		bas.getPhysicsSpace().add(player);
+		
+		//Setup lights and keybinds
+		Controls controls = new Controls();
+		controls.init();
+		
+		LOG.info("Game initialized");
 	}
 
 	@Override
 	public void simpleUpdate(float tpf) {
+		if(Controls.sprint == true) camDir.set(cam.getDirection().multLocal(0.8f));
+		if(Controls.sprint == false) camDir.set(cam.getDirection().multLocal(0.6f));
+		camLeft.set(cam.getLeft().multLocal(0.4f));
+		walkDirection.set(0, 0, 0);
 		
+		if(Controls.up) walkDirection.addLocal(camDir.getX(), 0, camDir.getZ());
+		if(Controls.down) walkDirection.addLocal(camDir.negate().getX(), 0, camDir.negate().getZ());
+		if(Controls.left) walkDirection.addLocal(camLeft);
+		if(Controls.right) walkDirection.addLocal(camLeft.negate());
+		
+		if(Controls.jump == true && player.onGround() == true) {
+			Controls.jump = false;
+			player.jump();
+		}
+		
+		player.setWalkDirection(walkDirection);
+		cam.setLocation(player.getPhysicsLocation());
 	}
 }

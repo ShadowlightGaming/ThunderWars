@@ -11,6 +11,7 @@ import com.jme3.bullet.collision.shapes.CollisionShape;
 import com.jme3.bullet.control.CharacterControl;
 import com.jme3.bullet.control.RigidBodyControl;
 import com.jme3.bullet.util.CollisionShapeFactory;
+import com.jme3.light.PointLight;
 import com.jme3.math.ColorRGBA;
 import com.jme3.math.Vector3f;
 import com.jme3.scene.Spatial;
@@ -69,14 +70,21 @@ public class Game extends SimpleApplication {
 		flyCam.setMoveSpeed(20);
 		
 		//Load map
-		app.getAssetManager().registerLocator("assets/models/Room.zip", ZipLocator.class);
-		sceneModel = app.getAssetManager().loadModel("Room.scene");
-		sceneModel.setLocalScale(2f);
+		app.getAssetManager().registerLocator("assets/models/map1.zip", ZipLocator.class);
+		sceneModel = app.getAssetManager().loadModel("map1.scene");
+		sceneModel.setLocalScale(2.5f);
 		
 		//Set world collision paramators
 		CollisionShape collisionShape = CollisionShapeFactory.createMeshShape(sceneModel);
 		landscape = new RigidBodyControl(collisionShape, 0);
 		sceneModel.addControl(landscape);
+		
+		//Set Lighting
+		PointLight light = new PointLight();
+		light.setColor(ColorRGBA.White);
+		light.setRadius(2500f);
+		light.setPosition(new Vector3f(0f,50f,0f));
+		rootNode.addLight(light);
 		
 		//Load Player
 		CapsuleCollisionShape capsuleShape = new CapsuleCollisionShape(1.5f, 6f, 1);

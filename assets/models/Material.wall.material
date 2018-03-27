@@ -1,12 +1,12 @@
-// Material.Road genrated by blender2ogre 0.6.0
+// Material.wall genrated by blender2ogre 0.6.0
 
-material Material.Road 
+material Material.wall 
 {
     receive_shadows on 
 
     technique
     {
-        pass Material.Road
+        pass Material.wall
         {
             ambient 0.800000011920929 0.800000011920929 0.800000011920929 1.0
             diffuse 0.6400000190734865 0.6400000190734865 0.6400000190734865 1.0
@@ -32,7 +32,7 @@ material Material.Road
 
             texture_unit 
             {
-                texture Road.png
+                texture wall.jpg
                 tex_address_mode wrap
                 scale 1.0 1.0
                 tex_coord_set 0

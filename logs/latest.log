@@ -1,14 +1,14 @@
-[21:33:02][Main:addCommands] FINE: Help command added
-[21:33:02][Main:addCommands] INFO: Commands loaded
-[21:33:02][Game:run] FINE: Framerate set to 120
-[21:33:02][Game:run] FINE: Fullscreen set to false
-[21:33:02][Game:run] FINE: Screen Width set to 1920
-[21:33:02][Game:run] FINE: Screen Height set to 1080
-[21:33:02][Game:run] FINE: Antianliasing set to 16
-[21:33:02][Game:run] FINE: VSynce set to true
-[21:33:02][Game:run] FINE: Title set to "Game 3D [WIP]"
-[21:33:02][Game:run] FINE: Icon set
-[21:33:02][Game:run] INFO: Starting game
-[21:33:03][Controls:init] INFO: Key listener created
-[21:33:03][Controls:init] INFO: Keys initialized
-[21:33:03][Game:simpleInitApp] INFO: Game initialized
+[21:48:10][Main:addCommands] FINE: Help command added
+[21:48:10][Main:addCommands] INFO: Commands loaded
+[21:48:10][Game:run] FINE: Framerate set to 120
+[21:48:10][Game:run] FINE: Fullscreen set to false
+[21:48:10][Game:run] FINE: Screen Width set to 1280
+[21:48:10][Game:run] FINE: Screen Height set to 720
+[21:48:10][Game:run] FINE: Antianliasing set to 16
+[21:48:10][Game:run] FINE: VSynce set to true
+[21:48:10][Game:run] FINE: Title set to "Game 3D [WIP]"
+[21:48:10][Game:run] FINE: Icon set
+[21:48:10][Game:run] INFO: Starting game
+[21:48:11][Controls:init] INFO: Key listener created
+[21:48:11][Controls:init] INFO: Keys initialized
+[21:48:11][Game:simpleInitApp] INFO: Game initialized

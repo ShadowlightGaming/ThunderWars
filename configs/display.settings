@@ -1,9 +1,9 @@
 #This config controls the video settings. If you don't know what you are doing, DO NOT EDIT!
-#Sun Mar 25 21:33:02 EDT 2018
+#Mon Mar 26 21:48:10 EDT 2018
 showfps=true
 framerate=120
-screenWidth=1920
+screenWidth=1280
 fullscreen=false
-screenHeight=1080
+screenHeight=720
 antianliasing=16
 vsync=true

@@ -1,5 +1,5 @@
 #This config edits things such as log output appearance
-#Sun Mar 25 21:33:02 EDT 2018
+#Mon Mar 26 21:48:10 EDT 2018
 showTime=true
 keepLogs=5
 showSource=true
